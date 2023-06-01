@@ -16,6 +16,7 @@ import {
     Min,
     Max,
 } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity()
 export class Partner {
@@ -25,16 +26,28 @@ export class Partner {
   @PrimaryColumn()
   id: string;
 
+  @ApiProperty({
+    type: String
+  })
   @Column()
   name: string;
 
+  @ApiProperty({
+    type: String
+  })
   @Column({ unique: true })
   @IsEmail()
   email: string;
 
+  @ApiProperty({
+    type: String
+  })
   @Column()
   phone: string;
 
+  @ApiProperty({
+    type: String
+  })
   @Column()
   isPublished: boolean;
 }

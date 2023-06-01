@@ -40,4 +40,10 @@ export class User {
     type: String,
   })
   password: string;
+
+  @Column()
+  @ApiProperty({
+    type: String
+  })
+  clientId: string;
 }
