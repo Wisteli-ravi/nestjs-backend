@@ -5,15 +5,16 @@ import { UserModule } from './user/user.module';
 import { ClaimModule } from './claim/claim.module';
 import { SseModule } from './sse/sse.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { DocumentModule } from './document/document.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      host:  '65.2.23.183',
-      username: 'DocInsightApiuser',
-      password: 'T%25%5E%26%24%24*9ji9',
-      database: 'documentAnalyticsDB',
+      host: '127.0.0.1',
+      username: 'admin',
+      password: 'admin',
+      database: 'documents_master',
       synchronize: false,
       authMechanism: 'default',
       authSource: 'admin',
@@ -23,6 +24,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     UserModule,
     ClaimModule,
     SseModule,
+    DocumentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
